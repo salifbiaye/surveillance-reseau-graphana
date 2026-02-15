@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Installation de tshark/dumpcap si nécessaire
+if ! command -v dumpcap &> /dev/null; then
+    echo "Installation de tshark/dumpcap..."
+    export DEBIAN_FRONTEND=noninteractive
+    apt-get update -qq
+    apt-get install -y -qq tshark > /dev/null 2>&1
+    echo "Installation terminée."
+fi
+
 INTERFACE=${CAPTURE_INTERFACE:-ens33}
 RING_BUFFER_SIZE=${PCAP_MAX_SIZE:-1000}  # MB
 RING_BUFFER_FILES=${PCAP_FILES:-10}      # Nombre de fichiers

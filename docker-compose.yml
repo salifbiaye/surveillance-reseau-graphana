@@ -115,7 +115,7 @@ services:
   # DUMPCAP - Capture PCAP avec ring buffer
   # ============================================
   dumpcap:
-    image: wireshark/tshark:latest
+    image: ubuntu:22.04
     container_name: surveillance-dumpcap
     network_mode: host
     privileged: true
