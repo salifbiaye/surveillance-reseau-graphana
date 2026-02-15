@@ -1,19 +1,6 @@
 {
   "annotations": {
-    "list": [
-      {
-        "builtIn": 1,
-        "datasource": {
-          "type": "grafana",
-          "uid": "-- Grafana --"
-        },
-        "enable": true,
-        "hide": true,
-        "iconColor": "rgba(0, 211, 255, 1)",
-        "name": "Annotations & Alerts",
-        "type": "dashboard"
-      }
-    ]
+    "list": []
   },
   "editable": true,
   "fiscalYearStartMonth": 0,
@@ -25,7 +12,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "elasticsearch-zeek"
+        "uid": "${DS_ELASTICSEARCH-ALL}"
       },
       "fieldConfig": {
         "defaults": {
@@ -111,7 +98,7 @@
           ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "elasticsearch-zeek"
+            "uid": "${DS_ELASTICSEARCH-ALL}"
           },
           "metrics": [
             {
@@ -130,7 +117,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "elasticsearch-zeek"
+        "uid": "${DS_ELASTICSEARCH-ALL}"
       },
       "fieldConfig": {
         "defaults": {
@@ -183,7 +170,7 @@
           "bucketAggs": [],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "elasticsearch-zeek"
+            "uid": "${DS_ELASTICSEARCH-ALL}"
           },
           "metrics": [
             {
@@ -202,7 +189,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "elasticsearch-zeek"
+        "uid": "${DS_ELASTICSEARCH-ALL}"
       },
       "fieldConfig": {
         "defaults": {
@@ -251,7 +238,7 @@
           "bucketAggs": [],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "elasticsearch-zeek"
+            "uid": "${DS_ELASTICSEARCH-ALL}"
           },
           "metrics": [
             {
@@ -259,7 +246,7 @@
               "type": "count"
             }
           ],
-          "query": "event_type:notice OR event_type:alert",
+          "query": "event_type:notice OR event_type:alert OR event_type:mitm_detection",
           "refId": "A",
           "timeField": "@timestamp"
         }
@@ -270,7 +257,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "elasticsearch-zeek"
+        "uid": "${DS_ELASTICSEARCH-ALL}"
       },
       "gridPos": {
         "h": 10,
@@ -303,7 +290,7 @@
           ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "elasticsearch-zeek"
+            "uid": "${DS_ELASTICSEARCH-ALL}"
           },
           "metrics": [
             {
@@ -322,7 +309,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "elasticsearch-zeek"
+        "uid": "${DS_ELASTICSEARCH-ALL}"
       },
       "fieldConfig": {
         "defaults": {
@@ -390,7 +377,7 @@
           ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "elasticsearch-zeek"
+            "uid": "${DS_ELASTICSEARCH-ALL}"
           },
           "metrics": [
             {
@@ -409,7 +396,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "elasticsearch-zeek"
+        "uid": "${DS_ELASTICSEARCH-ALL}"
       },
       "fieldConfig": {
         "defaults": {
@@ -464,7 +451,7 @@
         {
           "bucketAggs": [
             {
-              "field": "id.orig_h.keyword",
+              "field": "src_ip.keyword",
               "id": "2",
               "settings": {
                 "min_doc_count": "1",
@@ -477,7 +464,7 @@
           ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "elasticsearch-zeek"
+            "uid": "${DS_ELASTICSEARCH-ALL}"
           },
           "metrics": [
             {
@@ -503,7 +490,26 @@
     "zeek"
   ],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "current": {
+          "selected": false,
+          "text": "Elasticsearch-All",
+          "value": "Elasticsearch-All"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": "datasource",
+        "multi": false,
+        "name": "DS_ELASTICSEARCH-ALL",
+        "options": [],
+        "query": "elasticsearch",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "type": "datasource"
+      }
+    ]
   },
   "time": {
     "from": "now-6h",

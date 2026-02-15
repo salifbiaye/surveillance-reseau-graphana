@@ -12,7 +12,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "elasticsearch-http"
+        "uid": "${DS_ELASTICSEARCH-HTTP}"
       },
       "fieldConfig": {
         "defaults": {
@@ -59,7 +59,7 @@
           "bucketAggs": [],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "elasticsearch-http"
+            "uid": "${DS_ELASTICSEARCH-HTTP}"
           },
           "metrics": [
             {
@@ -72,13 +72,13 @@
           "timeField": "@timestamp"
         }
       ],
-      "title": "🌐 Total HTTP Requests",
+      "title": "Total HTTP Requests",
       "type": "stat"
     },
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "elasticsearch-http"
+        "uid": "${DS_ELASTICSEARCH-HTTP}"
       },
       "fieldConfig": {
         "defaults": {
@@ -133,7 +133,7 @@
           "bucketAggs": [],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "elasticsearch-http"
+            "uid": "${DS_ELASTICSEARCH-HTTP}"
           },
           "metrics": [
             {
@@ -146,13 +146,13 @@
           "timeField": "@timestamp"
         }
       ],
-      "title": "⚠️ HTTP Errors (4xx/5xx)",
+      "title": "HTTP Errors (4xx/5xx)",
       "type": "stat"
     },
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "elasticsearch-http"
+        "uid": "${DS_ELASTICSEARCH-HTTP}"
       },
       "fieldConfig": {
         "defaults": {
@@ -200,7 +200,7 @@
           "bucketAggs": [],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "elasticsearch-http"
+            "uid": "${DS_ELASTICSEARCH-HTTP}"
           },
           "metrics": [
             {
@@ -214,13 +214,13 @@
           "timeField": "@timestamp"
         }
       ],
-      "title": "📊 Total Data Downloaded",
+      "title": "Total Data Downloaded",
       "type": "stat"
     },
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "elasticsearch-http"
+        "uid": "${DS_ELASTICSEARCH-HTTP}"
       },
       "fieldConfig": {
         "defaults": {
@@ -279,7 +279,7 @@
           ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "elasticsearch-http"
+            "uid": "${DS_ELASTICSEARCH-HTTP}"
           },
           "metrics": [
             {
@@ -292,13 +292,13 @@
           "timeField": "@timestamp"
         }
       ],
-      "title": "🌍 Unique Websites Visited",
+      "title": "Unique Websites Visited",
       "type": "stat"
     },
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "elasticsearch-http"
+        "uid": "${DS_ELASTICSEARCH-HTTP}"
       },
       "fieldConfig": {
         "defaults": {
@@ -384,7 +384,7 @@
           ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "elasticsearch-http"
+            "uid": "${DS_ELASTICSEARCH-HTTP}"
           },
           "metrics": [
             {
@@ -397,13 +397,13 @@
           "timeField": "@timestamp"
         }
       ],
-      "title": "📈 HTTP Traffic Over Time",
+      "title": "HTTP Traffic Over Time",
       "type": "timeseries"
     },
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "elasticsearch-http"
+        "uid": "${DS_ELASTICSEARCH-HTTP}"
       },
       "fieldConfig": {
         "defaults": {
@@ -486,7 +486,7 @@
           ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "elasticsearch-http"
+            "uid": "${DS_ELASTICSEARCH-HTTP}"
           },
           "metrics": [
             {
@@ -499,7 +499,7 @@
           "timeField": "@timestamp"
         }
       ],
-      "title": "🌐 Top 20 Websites Visited",
+      "title": "Top 20 Websites Visited",
       "transformations": [
         {
           "id": "organize",
@@ -518,7 +518,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "elasticsearch-http"
+        "uid": "${DS_ELASTICSEARCH-HTTP}"
       },
       "fieldConfig": {
         "defaults": {
@@ -587,7 +587,7 @@
           ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "elasticsearch-http"
+            "uid": "${DS_ELASTICSEARCH-HTTP}"
           },
           "metrics": [
             {
@@ -606,7 +606,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "elasticsearch-http"
+        "uid": "${DS_ELASTICSEARCH-HTTP}"
       },
       "gridPos": {
         "h": 12,
@@ -639,7 +639,7 @@
           ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "elasticsearch-http"
+            "uid": "${DS_ELASTICSEARCH-HTTP}"
           },
           "metrics": [
             {
@@ -652,13 +652,13 @@
           "timeField": "@timestamp"
         }
       ],
-      "title": "🔍 Detailed HTTP Request Logs",
+      "title": "Detailed HTTP Request Logs",
       "type": "logs"
     },
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "elasticsearch-http"
+        "uid": "${DS_ELASTICSEARCH-HTTP}"
       },
       "fieldConfig": {
         "defaults": {
@@ -719,7 +719,7 @@
           ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "elasticsearch-http"
+            "uid": "${DS_ELASTICSEARCH-HTTP}"
           },
           "metrics": [
             {
@@ -732,7 +732,7 @@
           "timeField": "@timestamp"
         }
       ],
-      "title": "👤 Top Internal Users (by IP)",
+      "title": "Top Internal Users (by IP)",
       "transformations": [
         {
           "id": "organize",
@@ -751,7 +751,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "elasticsearch-http"
+        "uid": "${DS_ELASTICSEARCH-HTTP}"
       },
       "fieldConfig": {
         "defaults": {
@@ -852,7 +852,7 @@
           ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "elasticsearch-http"
+            "uid": "${DS_ELASTICSEARCH-HTTP}"
           },
           "metrics": [
             {
@@ -865,7 +865,7 @@
           "timeField": "@timestamp"
         }
       ],
-      "title": "📊 HTTP Status Codes",
+      "title": "HTTP Status Codes",
       "transformations": [
         {
           "id": "organize",
@@ -892,7 +892,26 @@
     "zeek"
   ],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "current": {
+          "selected": false,
+          "text": "Elasticsearch-HTTP",
+          "value": "Elasticsearch-HTTP"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": "datasource",
+        "multi": false,
+        "name": "DS_ELASTICSEARCH-HTTP",
+        "options": [],
+        "query": "elasticsearch",
+        "refresh": 1,
+        "regex": "/Elasticsearch-HTTP/",
+        "skipUrlSync": false,
+        "type": "datasource"
+      }
+    ]
   },
   "time": {
     "from": "now-6h",
