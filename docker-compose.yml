@@ -1,18 +1,23 @@
 services:
   # ============================================
-  # INIT - Fix permissions pour Elasticsearch
+  # INIT - Fix permissions pour Elasticsearch et Grafana
   # ============================================
-  elasticsearch-init:
+  data-init:
     image: alpine:latest
-    container_name: surveillance-elasticsearch-init
+    container_name: surveillance-data-init
     volumes:
       - ./data/elasticsearch:/data/elasticsearch
+      - ./data/grafana:/data/grafana
+      - ./data/pcap:/data/pcap
+      - ./data/logs:/data/logs
     command: >
       sh -c "
-        echo '[INIT] Création et configuration du dossier Elasticsearch...';
-        mkdir -p /data/elasticsearch;
-        chmod -R 777 /data/elasticsearch;
-        echo '[INIT] Permissions configurées. Elasticsearch peut démarrer.';
+        echo '[INIT] Configuration des permissions...';
+        mkdir -p /data/elasticsearch /data/grafana /data/pcap /data/logs;
+        chown -R 1000:1000 /data/elasticsearch;
+        chown -R 472:472 /data/grafana;
+        chmod -R 755 /data/elasticsearch /data/grafana /data/pcap /data/logs;
+        echo '[INIT] Permissions configurées.';
       "
     restart: "no"
 
@@ -34,7 +39,7 @@ services:
     networks:
       - surveillance-net
     depends_on:
-      elasticsearch-init:
+      data-init:
         condition: service_completed_successfully
     restart: unless-stopped
     healthcheck:
@@ -61,7 +66,10 @@ services:
       - ./configs/grafana/dashboards:/etc/grafana/dashboards
       - ./data/grafana:/var/lib/grafana
     depends_on:
-      - elasticsearch
+      data-init:
+        condition: service_completed_successfully
+      elasticsearch:
+        condition: service_healthy
     networks:
       - surveillance-net
     restart: unless-stopped
