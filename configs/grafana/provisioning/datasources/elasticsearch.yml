@@ -1,0 +1,16 @@
+apiVersion: 1
+
+datasources:
+  - name: Elasticsearch-Zeek
+    type: elasticsearch
+    access: proxy
+    url: http://elasticsearch:9200
+    database: "zeek-*"
+    jsonData:
+      timeField: "@timestamp"
+      esVersion: "8.0.0"
+      logMessageField: "message"
+      logLevelField: "event_type"
+      interval: Daily
+      timeInterval: "10s"
+    isDefault: true

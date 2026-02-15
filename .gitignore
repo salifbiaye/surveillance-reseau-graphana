@@ -1,0 +1,19 @@
+# Data directories (ignorer le contenu mais garder la structure)
+data/*
+!data/**/.gitkeep
+*.pcap
+*.pcap.gz
+
+# Environment variables
+.env.local
+
+# Logs
+*.log
+
+# Docker
+.docker/
+
+# OS
+.DS_Store
+Thumbs.db
+.env
