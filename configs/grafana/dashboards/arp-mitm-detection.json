@@ -64,7 +64,18 @@
       "pluginVersion": "10.3.0",
       "targets": [
         {
-          "bucketAggs": [],
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": "0",
+                "trimEdges": "0"
+              },
+              "type": "date_histogram"
+            }
+          ],
           "datasource": {
             "type": "elasticsearch",
             "uid": "${DS_ELASTICSEARCH-ARP}"
@@ -138,7 +149,18 @@
       "pluginVersion": "10.3.0",
       "targets": [
         {
-          "bucketAggs": [],
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": "0",
+                "trimEdges": "0"
+              },
+              "type": "date_histogram"
+            }
+          ],
           "datasource": {
             "type": "elasticsearch",
             "uid": "${DS_ELASTICSEARCH-ARP}"
@@ -208,7 +230,18 @@
       "pluginVersion": "10.3.0",
       "targets": [
         {
-          "bucketAggs": [],
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": "0",
+                "trimEdges": "0"
+              },
+              "type": "date_histogram"
+            }
+          ],
           "datasource": {
             "type": "elasticsearch",
             "uid": "${DS_ELASTICSEARCH-ARP}"
@@ -274,7 +307,18 @@
       "pluginVersion": "10.3.0",
       "targets": [
         {
-          "bucketAggs": [],
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": "0",
+                "trimEdges": "0"
+              },
+              "type": "date_histogram"
+            }
+          ],
           "datasource": {
             "type": "elasticsearch",
             "uid": "${DS_ELASTICSEARCH-ARP}"
@@ -698,7 +742,6 @@
         "options": [],
         "query": "elasticsearch",
         "refresh": 1,
-        "regex": "/Elasticsearch-ARP/",
         "skipUrlSync": false,
         "type": "datasource"
       }

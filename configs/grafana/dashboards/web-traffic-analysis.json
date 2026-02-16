@@ -12,7 +12,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "${DS_ELASTICSEARCH-HTTP}"
+        "uid": "elasticsearch-http"
       },
       "fieldConfig": {
         "defaults": {
@@ -56,10 +56,21 @@
       "pluginVersion": "10.3.0",
       "targets": [
         {
-          "bucketAggs": [],
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": "0",
+                "trimEdges": "0"
+              },
+              "type": "date_histogram"
+            }
+          ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "${DS_ELASTICSEARCH-HTTP}"
+            "uid": "elasticsearch-http"
           },
           "metrics": [
             {
@@ -78,7 +89,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "${DS_ELASTICSEARCH-HTTP}"
+        "uid": "elasticsearch-http"
       },
       "fieldConfig": {
         "defaults": {
@@ -130,10 +141,21 @@
       "pluginVersion": "10.3.0",
       "targets": [
         {
-          "bucketAggs": [],
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": "0",
+                "trimEdges": "0"
+              },
+              "type": "date_histogram"
+            }
+          ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "${DS_ELASTICSEARCH-HTTP}"
+            "uid": "elasticsearch-http"
           },
           "metrics": [
             {
@@ -141,7 +163,7 @@
               "type": "count"
             }
           ],
-          "query": "status_code:>=400",
+          "query": "status_code:[400 TO 599]",
           "refId": "A",
           "timeField": "@timestamp"
         }
@@ -152,7 +174,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "${DS_ELASTICSEARCH-HTTP}"
+        "uid": "elasticsearch-http"
       },
       "fieldConfig": {
         "defaults": {
@@ -197,10 +219,21 @@
       "pluginVersion": "10.3.0",
       "targets": [
         {
-          "bucketAggs": [],
+          "bucketAggs": [
+            {
+              "field": "@timestamp",
+              "id": "2",
+              "settings": {
+                "interval": "auto",
+                "min_doc_count": "0",
+                "trimEdges": "0"
+              },
+              "type": "date_histogram"
+            }
+          ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "${DS_ELASTICSEARCH-HTTP}"
+            "uid": "elasticsearch-http"
           },
           "metrics": [
             {
@@ -220,7 +253,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "${DS_ELASTICSEARCH-HTTP}"
+        "uid": "elasticsearch-http"
       },
       "fieldConfig": {
         "defaults": {
@@ -279,7 +312,7 @@
           ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "${DS_ELASTICSEARCH-HTTP}"
+            "uid": "elasticsearch-http"
           },
           "metrics": [
             {
@@ -298,7 +331,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "${DS_ELASTICSEARCH-HTTP}"
+        "uid": "elasticsearch-http"
       },
       "fieldConfig": {
         "defaults": {
@@ -384,7 +417,7 @@
           ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "${DS_ELASTICSEARCH-HTTP}"
+            "uid": "elasticsearch-http"
           },
           "metrics": [
             {
@@ -403,7 +436,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "${DS_ELASTICSEARCH-HTTP}"
+        "uid": "elasticsearch-http"
       },
       "fieldConfig": {
         "defaults": {
@@ -486,7 +519,7 @@
           ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "${DS_ELASTICSEARCH-HTTP}"
+            "uid": "elasticsearch-http"
           },
           "metrics": [
             {
@@ -518,7 +551,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "${DS_ELASTICSEARCH-HTTP}"
+        "uid": "elasticsearch-http"
       },
       "fieldConfig": {
         "defaults": {
@@ -587,7 +620,7 @@
           ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "${DS_ELASTICSEARCH-HTTP}"
+            "uid": "elasticsearch-http"
           },
           "metrics": [
             {
@@ -606,7 +639,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "${DS_ELASTICSEARCH-HTTP}"
+        "uid": "elasticsearch-http"
       },
       "gridPos": {
         "h": 12,
@@ -639,7 +672,7 @@
           ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "${DS_ELASTICSEARCH-HTTP}"
+            "uid": "elasticsearch-http"
           },
           "metrics": [
             {
@@ -658,7 +691,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "${DS_ELASTICSEARCH-HTTP}"
+        "uid": "elasticsearch-http"
       },
       "fieldConfig": {
         "defaults": {
@@ -719,7 +752,7 @@
           ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "${DS_ELASTICSEARCH-HTTP}"
+            "uid": "elasticsearch-http"
           },
           "metrics": [
             {
@@ -751,7 +784,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "${DS_ELASTICSEARCH-HTTP}"
+        "uid": "elasticsearch-http"
       },
       "fieldConfig": {
         "defaults": {
@@ -852,7 +885,7 @@
           ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "${DS_ELASTICSEARCH-HTTP}"
+            "uid": "elasticsearch-http"
           },
           "metrics": [
             {
@@ -907,7 +940,6 @@
         "options": [],
         "query": "elasticsearch",
         "refresh": 1,
-        "regex": "/Elasticsearch-HTTP/",
         "skipUrlSync": false,
         "type": "datasource"
       }

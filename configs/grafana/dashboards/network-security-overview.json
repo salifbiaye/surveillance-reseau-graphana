@@ -12,7 +12,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "${DS_ELASTICSEARCH-ALL}"
+        "uid": "elasticsearch-all"
       },
       "fieldConfig": {
         "defaults": {
@@ -98,7 +98,7 @@
           ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "${DS_ELASTICSEARCH-ALL}"
+            "uid": "elasticsearch-all"
           },
           "metrics": [
             {
@@ -117,7 +117,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "${DS_ELASTICSEARCH-ALL}"
+        "uid": "elasticsearch-all"
       },
       "fieldConfig": {
         "defaults": {
@@ -170,7 +170,7 @@
           "bucketAggs": [],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "${DS_ELASTICSEARCH-ALL}"
+            "uid": "elasticsearch-all"
           },
           "metrics": [
             {
@@ -189,7 +189,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "${DS_ELASTICSEARCH-ALL}"
+        "uid": "elasticsearch-all"
       },
       "fieldConfig": {
         "defaults": {
@@ -238,7 +238,7 @@
           "bucketAggs": [],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "${DS_ELASTICSEARCH-ALL}"
+            "uid": "elasticsearch-all"
           },
           "metrics": [
             {
@@ -257,7 +257,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "${DS_ELASTICSEARCH-ALL}"
+        "uid": "elasticsearch-all"
       },
       "gridPos": {
         "h": 10,
@@ -290,7 +290,7 @@
           ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "${DS_ELASTICSEARCH-ALL}"
+            "uid": "elasticsearch-all"
           },
           "metrics": [
             {
@@ -309,7 +309,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "${DS_ELASTICSEARCH-ALL}"
+        "uid": "elasticsearch-all"
       },
       "fieldConfig": {
         "defaults": {
@@ -377,7 +377,7 @@
           ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "${DS_ELASTICSEARCH-ALL}"
+            "uid": "elasticsearch-all"
           },
           "metrics": [
             {
@@ -396,7 +396,7 @@
     {
       "datasource": {
         "type": "elasticsearch",
-        "uid": "${DS_ELASTICSEARCH-ALL}"
+        "uid": "elasticsearch-all"
       },
       "fieldConfig": {
         "defaults": {
@@ -464,7 +464,7 @@
           ],
           "datasource": {
             "type": "elasticsearch",
-            "uid": "${DS_ELASTICSEARCH-ALL}"
+            "uid": "elasticsearch-all"
           },
           "metrics": [
             {
@@ -505,7 +505,6 @@
         "options": [],
         "query": "elasticsearch",
         "refresh": 1,
-        "regex": "",
         "skipUrlSync": false,
         "type": "datasource"
       }

@@ -9,7 +9,7 @@
 @load base/protocols/ftp
 
 # Charger les politiques de détection
-@load policy/frameworks/notice/actions/add-geodata
+# @load policy/frameworks/notice/actions/add-geodata  # Module non disponible dans Zeek 6.0
 @load policy/protocols/conn/known-hosts
 @load policy/protocols/conn/known-services
 @load policy/protocols/dns/detect-external-names
@@ -30,17 +30,17 @@ redef Log::default_logdir = "/data/logs/zeek/current";
 # Logs au format TSV (natif Zeek, pas JSON)
 # Logstash se charge de la transformation
 
-# Détections personnalisées
-event connection_established(c: connection) {
-    # Détection de connexions suspectes
-    if (c$id$resp_p == 22/tcp && c$orig$location$country_code !in Site::local_zones) {
-        NOTICE([$note=SSH_From_Foreign_Country,
-                $msg=fmt("SSH connection from %s", c$id$orig_h),
-                $conn=c]);
-    }
-}
+# Détections personnalisées (commenté car nécessite geodata)
+# event connection_established(c: connection) {
+#     # Détection de connexions suspectes
+#     if (c$id$resp_p == 22/tcp && c$orig$location$country_code !in Site::local_nets) {
+#         NOTICE([$note=SSH_From_Foreign_Country,
+#                 $msg=fmt("SSH connection from %s", c$id$orig_h),
+#                 $conn=c]);
+#     }
+# }
 
 # Extraction de fichiers
 @load base/files/extract
 redef FileExtract::prefix = "/data/extracted-files/";
-redef FileExtract::default_limit = 10MB;
+redef FileExtract::default_limit = 10485760;  # 10 MB en octets

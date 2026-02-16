@@ -1,6 +1,7 @@
-path.config: /usr/share/logstash/pipeline
+# path.config: /usr/share/logstash/pipeline  # Commenté pour utiliser pipelines.yml
 path.logs: /var/log/logstash
-pipeline.workers: 2
-pipeline.batch.size: 125
+# pipeline.workers et pipeline.batch.size sont maintenant définis par pipeline dans pipelines.yml
+# pipeline.workers: 2
+# pipeline.batch.size: 125
 pipeline.batch.delay: 50
 queue.type: memory

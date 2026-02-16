@@ -111,6 +111,7 @@ services:
     volumes:
       - ./configs/logstash/pipelines:/usr/share/logstash/pipeline
       - ./configs/logstash/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./configs/logstash/pipelines.yml:/usr/share/logstash/config/pipelines.yml
       - ./data/logs:/data/logs:ro
     depends_on:
       elasticsearch:
