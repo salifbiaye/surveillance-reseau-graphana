@@ -1,0 +1,22 @@
+# Configuration des pipelines Logstash séparés
+# Chaque pipeline lit son propre fichier log et applique ses propres filtres
+
+- pipeline.id: zeek-conn
+  path.config: "/usr/share/logstash/pipeline/01-zeek-conn.conf"
+  pipeline.workers: 1
+
+- pipeline.id: zeek-dns
+  path.config: "/usr/share/logstash/pipeline/02-zeek-dns.conf"
+  pipeline.workers: 1
+
+- pipeline.id: zeek-http
+  path.config: "/usr/share/logstash/pipeline/03-zeek-http.conf"
+  pipeline.workers: 1
+
+- pipeline.id: zeek-notice
+  path.config: "/usr/share/logstash/pipeline/04-zeek-notice.conf"
+  pipeline.workers: 1
+
+- pipeline.id: ettercap
+  path.config: "/usr/share/logstash/pipeline/05-ettercap.conf"
+  pipeline.workers: 1
